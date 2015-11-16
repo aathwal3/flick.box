@@ -8,13 +8,7 @@
 
 
 
-<h3>Available Videos</h3>
-
-  <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Filter By:") %>
-  <%= text_field_tag(:q, "Movie Title") %>
-  <%= submit_tag("Search") %>
-  <% end %>
+<h3>Available Videos:</h3>
 
 <table>
   <thead>

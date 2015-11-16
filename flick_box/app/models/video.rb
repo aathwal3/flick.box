@@ -5,4 +5,8 @@ class Video < ActiveRecord::Base
 	validates :status, presence: true
 	validates :description, presence: true
 	validates :release_date, presence: true
+
+	def self.search(query)
+	  where("title like ?", "%#{query}%") 
+	end
 end
