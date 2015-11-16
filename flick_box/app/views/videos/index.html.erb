@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Videos</h1>
+<h1>Search Results:</h1>
 
+<br>
 <% @videos.each do |video| %>
   <div class="video">
     <h1 class="video-title"><%= link_to video.title, video %></h1>
