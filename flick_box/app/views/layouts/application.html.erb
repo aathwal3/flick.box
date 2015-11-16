@@ -8,10 +8,12 @@
 </head>
 <body>
 <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  Signed in as <%= current_user.name %> | <%= link_to "Video Control Page", '/videos' %> | <%= link_to "Logout", '/logout' %>
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
+
+| <%= link_to 'Home', users_path %>
 
 <%= yield %>
 

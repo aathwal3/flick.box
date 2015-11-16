@@ -1,31 +1,38 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Welcome to Flick.Box!</h1>
 
-<h1>Listing Users</h1>
+
+
+<h3>Available Videos</h3>
+
+  <%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Filter By:") %>
+  <%= text_field_tag(:q, "Movie Title") %>
+  <%= submit_tag("Search") %>
+  <% end %>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password digest</th>
+      <th>Title</th>
+      <th>Release date</th>
+      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @videos.each do |video| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.password_digest %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to video.title, video %></td>
+        <td><%= video.release_date %></td>
+        <td><%= video.description %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
