@@ -4,14 +4,14 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
+  end
+
+  def search
     if params[:search]
       @videos = Video.search(params[:search])
     else
       @videos = Video.all
     end
-  end
-
-  def search
   end
 
   def show
